@@ -3,7 +3,7 @@ Un script en Python que convierte archivos **.docx** en **.pdf** y luego los une
 
 ## 🚀 Características  
 ✅ Convierte **todos los archivos DOCX** de una carpeta a PDF.  
-✅ Usa **Microsoft Word** para una conversión precisa.  
+✅ Usa **Microsoft Word** para la conversión.  
 ✅ **Une todos los PDFs** generados en un único archivo final.   
 
 ---
@@ -11,11 +11,11 @@ Un script en Python que convierte archivos **.docx** en **.pdf** y luego los une
 ## 🔧 Instalación  
 ### 1️⃣ **Clonar el repositorio**  
 ```sh
-git clone https://github.com/tuusuario/docx-to-pdf-merge.git
-cd docx-to-pdf-merge
+git clone https://github.com/Dvix-dev/tool-docx-to-pdf-merge.git
+cd tool-docx-to-pdf-merge
 ```
 
-### 2️⃣ Crear un entorno virtual (opcional, recomendado)
+### 2️⃣ Crear un entorno virtual (opcional)
 ```sh
 python -m venv .venv
 source .venv/bin/activate  # En Linux/macOS
@@ -34,14 +34,14 @@ pip install -r requirements.txt
 ## 🛠 Uso
 ### Ejecuta el script en una terminal con:
 ```sh
-python DUAL_DOCX_to_PDF_MERGE.py
+python DOCX_to_PDF_MERGE.py
 ```
 
 ### ✨ Pasos interactivos dentro del script
-1️⃣ Introduce el nombre del usuario del equipo.
-2️⃣ Especifica la carpeta con los archivos DOCX.
-3️⃣ El script convertirá los archivos DOCX → PDF y los guardará en pdf_output/.
-4️⃣ Introduce el nombre del PDF final.
+1️⃣ Introduce el nombre del usuario del equipo.<br>
+2️⃣ Especifica la carpeta con los archivos DOCX.<br>
+3️⃣ El script convertirá los archivos DOCX → PDF y los guardará en pdf_output/.<br>
+4️⃣ Introduce el nombre del PDF final.<br>
 5️⃣ Se generará el archivo combinado en la misma carpeta.
 
 > [!IMPORTANT]  
@@ -49,8 +49,8 @@ python DUAL_DOCX_to_PDF_MERGE.py
 
 ## 📂 Estructura del proyecto
 ```sh
-📂 docx-to-pdf-merge/
- ├── 📄 DOCX_to_PDF_MERGE.py        # Script principal
+📂 tool-docx-to-pdf-merge/
+ ├── 📄 TOOL_DOCX_to_PDF_MERGE.py   # Script principal
  ├── 📄 README.md                   # Documentación
  ├── 📄 requirements.txt            # Dependencias
 ```
@@ -58,5 +58,5 @@ python DUAL_DOCX_to_PDF_MERGE.py
 ## 📜 Licencia
 Este proyecto está bajo la licencia MIT. ¡Puedes usarlo y modificarlo libremente!
 
----
-Si tienes alguna sugerencia o mejora, ¡haz un pull request o abre un issue en GitHub!
+## 🫂 Contribuciones
+Si tienes alguna sugerencia, mejora o te ha surgido un problema, ¡haz un pull request o abre un issue en GitHub! 😁
