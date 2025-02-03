@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ## 🛠 Uso
 ### Ejecuta el script en una terminal con:
 ```sh
-python DOCX_to_PDF_MERGE.py
+python TOOL_DOCX_to_PDF_MERGE.py
 ```
 
 ### ✨ Pasos interactivos dentro del script
