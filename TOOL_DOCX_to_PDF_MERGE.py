@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 import comtypes.client
 from PyPDF2 import PdfMerger
+from tqdm import tqdm
 
 def docx_to_pdf(docx_path, pdf_path):
     """Convierte un archivo DOCX a PDF usando Microsoft Word (más preciso)."""
@@ -26,7 +27,8 @@ def merge_pdfs(pdf_folder, output_filename):
     merger = PdfMerger()
     pdf_files = sorted(Path(pdf_folder).glob("*.pdf"), key=natural_sort_key)
     
-    for pdf in pdf_files:
+    print("\n🔄 Uniendo PDFs...")
+    for pdf in tqdm(pdf_files, desc="Procesando PDFs", unit="archivo"):
         merger.append(str(pdf))
     
     merger.write(output_filename)
@@ -35,21 +37,24 @@ def merge_pdfs(pdf_folder, output_filename):
 def main():
     user_name = input("Introduce el nombre de la carpeta del usuario del equipo: ")
     input_folder = input("Introduce la carpeta con los archivos DOCX: ")
+    output_pdf_name = input("Introduce el nombre del PDF final (sin extensión): ")
     full_input_path = os.path.join("C:\\Users", user_name, "Desktop", input_folder)
     output_folder = os.path.join(full_input_path, "pdf_output")
     os.makedirs(output_folder, exist_ok=True)
     
+    docx_files = list(Path(full_input_path).glob("*.docx"))
+
     # Convertir DOCX a PDF
-    for docx_file in Path(full_input_path).glob("*.docx"):
+    print("\n🔄 Convirtiendo DOCX a PDF...")
+    for docx_file in tqdm(docx_files, desc="Procesando DOCX", unit="archivo"):
         pdf_path = os.path.join(output_folder, docx_file.stem + ".pdf")
         docx_to_pdf(docx_file, pdf_path)
     
     # Unir los PDFs
-    output_pdf_name = input("Introduce el nombre del PDF final (sin extensión): ")
     merged_pdf_path = os.path.join(full_input_path, f"{output_pdf_name}.pdf")
     merge_pdfs(output_folder, merged_pdf_path)
     
-    print(f"✅ Conversión y unión completadas. Archivo final: {merged_pdf_path}")
+    print(f"\n✅ Conversión y unión completadas. Archivo final: {merged_pdf_path}")
 
 if __name__ == "__main__":
     main()
